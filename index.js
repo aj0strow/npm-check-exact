@@ -12,7 +12,7 @@ var checkdeps = function (deps) {
       var semver = deps[name]
       var prefixes = [ "^", "~", "<", ">" ]
       prefixes.forEach(function (prefix) {
-        assert(semver[0] != prefix, name = " inexact npm version")
+        assert(semver[0] != prefix, name + " inexact npm version")
       })
       
       if (semver.indexOf("/") != -1) {
