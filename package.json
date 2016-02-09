@@ -3,5 +3,8 @@
   "version": "0.0.1",
   "bin": {
     "npm-check-exact": "index.js"
+  },
+  "scripts": {
+    "test": "node test/test.js"
   }
 }
