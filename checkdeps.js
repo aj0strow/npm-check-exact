@@ -1,9 +1,6 @@
 var assert = require("assert")
-var fs = require("fs")
-var path = require("path")
-var cp = require("child_process")
 
-var checkdeps = function (deps) {
+var check = function (deps) {
   if (deps) {
     Object.keys(deps).forEach(function (name) {
       var semver = deps[name]
@@ -18,9 +15,9 @@ var checkdeps = function (deps) {
   }
 }
 
-var filename = path.join(process.cwd(), "package.json")
-var file = fs.readFileSync(filename, { encoding: "utf8" })
-var pkg = JSON.parse(file)
-
-checkdeps(pkg.dependencies)
-checkdeps(pkg.devDependencies)
+module.exports = function (pkg) {
+  var keys = [ "dependencies", "devDependencies" ]
+  keys.forEach(function (key) {
+    check(pkg[key])
+  })
+}

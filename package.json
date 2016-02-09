@@ -2,9 +2,9 @@
   "name": "npm-check-exact",
   "version": "0.0.1",
   "bin": {
-    "npm-check-exact": "index.js"
+    "npm-check-exact": "cli.js"
   },
   "scripts": {
-    "test": "node test/test.js"
+    "test": "node test.js"
   }
 }

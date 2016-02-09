@@ -1,7 +1,0 @@
-{
-  "name": "carrot",
-  "private": true,
-  "dependencies": {
-    "express": "^3.20.3"
-  }
-}
